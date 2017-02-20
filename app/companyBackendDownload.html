@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>行政助手下载</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- build:css(.tmp) styles/companyBackendDownload.css -->
+    <link rel="stylesheet" type="text/css" href="styles/companyBackendDownload/companyBackendDownload.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/jquery-2.2.4.min.js -->
+    <script type="text/javascript" src="scripts/jquery/jquery-2.2.4.min.js"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div class="download-guide-page">
+        <div class="head">
+            <span class="title">行政助手下载</span>
+            <span class="icon-back" onclick="goBack()"></span>
+        </div>
+        <img class="icon-hollpin" src="images/companyBackendDownload/icon_hollpin_big.png" />
+        <img class="word-assistant" src="images/companyBackendDownload/word_assistant.png" />
+        <div class="word-guide">
+            帐号记忆功能让你免除
+            <br/>每次操作均需重新登录的烦恼
+        </div>
+        <button class="btn-download" onclick="gotoDownload()">立即下载</button>
+        <div class="guide-download">去App store
+            <br/>搜索"好品助手"下载</div>
+    </div>
+    <script type="text/javascript">
+    //app下载Url
+    var yybUrl = "http://a.app.qq.com/o/simple.jsp?pkgname=com.tuda.hollpin.assistant";
+    var androidUrl = "http://res.kingxique.com/app/company/android/Hollpin-6.0.0.3-release.apk";
+    var iosUrl = "itms-apps://itunes.apple.com/app/id1189903884";
+    //判断是否是IOS
+    var isIOS = function() {
+        return /(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent);
+    };
+    //判断是否是Android
+    var isAndroid = function() {
+        return /(Android)/i.test(navigator.userAgent);
+    };
+    //判断是否是微信
+    var isWeixin = function() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    };
+    var getAppVersion = function() {
+        var userAgent = navigator.userAgent;
+        var index = userAgent.indexOf('Tuda/');
+        if (index >= 0) {
+            var userAgentLength = userAgent.length;
+            return userAgent.substring(index + 6, userAgentLength);
+        }
+        return null;
+    };
+    var versionNumber = function(version) {
+        var strs = version.split(".");
+        var number = 0;
+        for (var i = 0; i < strs.length; i++) {
+            number += parseInt(strs[i]) * Math.pow(1000, 2 - i);
+            if (i >= 3) {
+                break;
+            }
+        }
+        return number;
+    };
+    //判断是否是低版本
+    var isLowAppVersion = function(version) {
+        return versionNumber(getAppVersion()) < versionNumber(version);
+    };
+    (function() {
+        var scale = 1.0;
+        var ratio = 1;
+        if (window.devicePixelRatio >= 2) {
+            scale *= 0.5;
+            ratio *= 2;
+        }
+        scale = 1 / window.devicePixelRatio;
+        var text = '<meta name="viewport" content="initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', width=device-width, user-scalable=no" />';
+        window.ratio = ratio;
+        document.write(text);
+
+        window.fontSizeNum = 50 * (document.body && document.body.clientWidth || document.documentElement && document.documentElement.clientWidth) / 375;
+        document.documentElement.style.fontSize = fontSizeNum + "px";
+
+        document.documentElement.style.height = (document.body && document.body.clientHeight || document.documentElement && document.documentElement.clientHeight) + 'px';
+        document.documentElement.style.overflowY = 'scroll';
+        document.getElementsByClassName('word-guide')[0].style.fontSize = parseInt(0.28 * window.fontSizeNum) + 'px';
+        document.write = function() {};
+        if (isIOS() && getAppVersion() && isLowAppVersion('6.0.0.0')) { //IOS且app小于6.0版本
+            document.getElementsByClassName('guide-download')[0].style.display = '';
+            document.getElementsByClassName('btn-download')[0].style.display = 'none';
+        } else {
+            document.getElementsByClassName('guide-download')[0].style.display = 'none';
+            document.getElementsByClassName('btn-download')[0].style.display = '';
+        }
+
+    })();
+
+    //返回上一页
+    var goBack = function() {
+        window.history.back();
+        if (!isWeixin()) {
+            window.location.href = 'tudahollpin://back';
+        }
+    };
+    //立即下载
+    var gotoDownload = function() {
+        var isIOS = this.isIOS();
+        var isAndroid = this.isAndroid();
+        var isWeixin = this.isWeixin();
+        if (isIOS || isAndroid) {
+            if (isWeixin) {
+                window.location.href = yybUrl;
+            } else if (isIOS) {
+                window.location.href = iosUrl;
+            } else if (isAndroid) {
+                window.location.href = androidUrl;
+            }
+        } else {
+            alert('请在搭载ios或Android系统的客户端进行下载');
+        };
+    };
+    </script>
+</body>
+
+</html>

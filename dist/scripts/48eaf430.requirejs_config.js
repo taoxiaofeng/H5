@@ -1,0 +1,1 @@
+requirejs.config({baseUrl:".",paths:{jquery:"jquery-2.1.1.min",XMLife:"XMLifeLib"}}),require([],function(){});

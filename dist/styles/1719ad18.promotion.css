@@ -1,0 +1,745 @@
+    /**
+ * 
+ * @authors ljlong (you@example.org)
+ * @date    2015-05-12 14:08:00
+ * @version 1.6.2
+ */
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        position: relative;
+        width: 100%;
+        font-size: 62.5%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-text-size-adjust: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    
+    body {
+        background-color: #353d41;
+    }
+    
+    .up {
+        position: relative;
+        text-align: center;
+        background-color: #9edffb;
+        overflow: hidden;
+    }
+    
+    .middle {
+        position: relative;
+        font-size: 0;
+        text-align: center;
+        margin-top: 10%;
+    }
+    
+    .down {
+        position: relative;
+        width: 100%;
+        margin-top: 15%;
+        /* margin-top: 65%*/
+    }
+    
+    .sky {
+        position: relative;
+        width: 100%;
+        z-index: 0;
+    }
+    
+    .car-wrap {
+        position: absolute;
+        left: 25%;
+        bottom: -2%;
+        width: 50%;
+        z-index: 3;
+    }
+    
+    .car {
+        width: 100%;
+    }
+    
+    .wheel-wrap {
+        position: absolute;
+        width: 100%;
+        top: 65%;
+    }
+    
+    .wheel {
+        width: 22%;
+        font-size: 0;
+        margin-left: -6%;
+        -webkit-animation: spin 1s linear infinite;
+        -moz-animation: spin 1s linear infinite;
+        -o-animation: spin 1s linear infinite;
+        -ms-animation: spin 1s linear infinite;
+    }
+    
+    .wheel:nth-child(2) {
+        margin-left: 28%;
+    }
+    
+    .cloud-wrap {
+        position: absolute;
+        top: 12%;
+        width: 100%;
+        z-index: 1;
+        overflow: hidden;
+    }
+    
+    .cloud {
+        position: relative;
+        left: -57%;
+        width: 15.9%;
+        -webkit-animation-name: move;
+        -webkit-animation-duration: 12s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+    }
+    
+    .shop-wrap {
+        position: absolute;
+        bottom: -3%;
+        width: 100%;
+        overflow: hidden;
+        z-index: 2;
+    }
+    
+    .shop {
+        position: relative;
+        left: -251.04%;
+        width: 251.04%;
+        -webkit-animation-name: shopmove;
+        -webkit-animation-duration: 16s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+    }
+    
+    .cloud-bottom {
+        position: absolute;
+        width: 100%;
+        z-index: 3;
+        left: 0;
+        bottom: 0;
+    }
+    
+    .coupon-wrap {
+        position: relative;
+        width: 100%;
+        text-align: center;
+    }
+    /*    .coupon-wrap>div {
+        margin-bottom: -2.3%;
+    }*/
+    
+    .superiority {
+        width: 100%;
+        margin-top: 2%;
+    }
+    
+    .coupon {
+        position: relative;
+        width: 100%;
+    }
+    
+    .pro-wrap {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        background-color: rgb(40, 46, 49);
+    }
+    
+    .pro-wrap::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .pro-wrap img {
+        width: 22%;
+        padding: 1%;
+        border-radius: 15%;
+    }
+    
+    .arrow-down {
+        margin: 0 auto;
+        width: 0;
+        height: 0;
+        border-top: 1.5rem solid rgb(40, 46, 49);
+        border-left: 1rem solid transparent;
+        border-right: 1rem solid transparent;
+        border-top: 5vw solid rgb(40, 46, 49);
+        border-left: 3vw solid transparent;
+        border-right: 3vw solid transparent;
+    }
+    
+    #number,
+    #delivertime {
+        color: rgb(255, 238, 47);
+        font-size: 1rem;
+        font-size: 5.50vw;
+        z-index: 4;
+    }
+    
+    .words-wrap {
+        display: inline-block;
+        margin: 0 auto;
+        padding-top: 10%;
+        padding-bottom: 10%;
+        padding-left: 2%;
+        padding-right: 1%;
+        background-color: rgb(40, 46, 49);
+        font-family: '兰亭黑-简';
+        font-size: 1.3rem;
+        font-size: 5.38vw;
+        color: #c7eeff
+    }
+    
+    .slogan {
+        position: absolute;
+        top: -61%;
+        left: 10%;
+        width: 80%;
+    }
+    /*红包*/
+    
+    .phone-wrap {
+        position: absolute;
+        top: 32%;
+        left: 0;
+        width: 100%;
+        height: 30px;
+        text-align: center;
+        z-index: 3;
+    }
+    
+    input.phone {
+        display: inline-block;
+        width: 50%;
+        height: 130%;
+        height: 12vw;
+        line-height: 130%;
+        font-size: 1rem;
+        font-size: 4.54vw;
+        border-radius: 8px;
+        border-radius: 1.5vw;
+        border: none;
+        outline: none;
+        text-align: center;
+    }
+    
+    a.btn {
+        display: block;
+        margin: 0 auto;
+        margin-top: 10%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        width: 50%;
+        font-size: 1rem;
+        font-size: 5.4vw;
+        background-color: rgb(177, 180, 181);
+        color: rgb(132, 129, 129);
+        border-radius: 8px;
+        border-radius: 1.5vw;
+    }
+    
+    .btn.active {
+        background-color: rgb(255, 233, 82);
+        color: rgb(232, 66, 57);
+    }
+    
+    .cash {
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        margin-bottom: -12%;
+    }
+    
+    .cash img {
+        width: 100%;
+    }
+    
+    .msg {
+        position: absolute;
+/*        top: 3%;
+        top: 1vw;*/
+        width: 100%;
+        font-size: 2rem;
+    }
+    
+    .desc-bg {
+        position: absolute;
+        top: -8%;
+        left: 0;
+        width: 100%;
+        z-index: 0;
+    }
+    
+    .desc-panel {
+        position: absolute;
+        background-color: rgb(228, 227, 224);
+        left: 15.5%;
+        top: -32%;
+        width: 70.06%;
+        height: 80%;
+    }
+    
+    .desc-success {
+        background-color: rgb(255, 234, 160);
+    }
+    
+    .desc-failure {
+        background-color: rgb(228, 227, 224);
+    }
+    
+    .desc-failure-title {
+        padding-top: 5%;
+        padding-bottom: 5%;
+        font-size: 1.79em;
+        font-size: 7.13vw;
+        font-weight: bolder;
+        color: rgb(111, 111, 111);
+    }
+    
+    .desc-failure-desc {
+        font-size: 0.9em;
+        font-size: 3.58vw;
+        color: rgb(147, 147, 147);
+    }
+    
+    .count,
+    .desc {
+        font-size: 1.5rem;
+        font-size: 4vw;
+    }
+    
+    .count {
+        margin-bottom: 2%;
+        color: rgb(170, 143, 47);
+    }
+    
+    .desc {
+        color: rgb(255, 203, 180);
+    }
+    
+    .amount {
+        margin-bottom: 4%;
+        margin-bottom: 2vw;
+        font-size: 5.4rem;
+        font-size: 11vw;
+    }
+    
+    #count,
+    .amount {
+        color: rgb(241, 47, 37);
+    }
+    
+    #phone {
+        color: rgb(255, 233, 82);
+        text-decoration: none;
+        outline: none;
+    }
+    
+    .msg>span {
+        display: inline-block;
+    }
+    
+    .msg>span:nth-child(2) {
+        display: block;
+    }
+    
+    .hide {
+        display: none;
+    }
+    
+    .openxmlife-wrap {
+        position: absolute;
+        top: 45%;
+        width: 100%;
+    }
+    
+    #openxmlife {
+        width: 52%;
+    }
+    
+    #openxmlife.active {
+        -webkit-transform: scale(0.95);
+        -moz-transform: scale(0.95);
+        -o-transform: scale(0.95);
+    }
+    
+    .pics img {
+        float: left;
+        width: 20%;
+    }
+    
+    #download {
+        width: 100%;
+        margin-top: 20%;
+    }
+    
+    #download img {
+        width: 100%;
+    }
+    
+    #download img.active {
+        -webkit-transform: scale(0.95);
+        -moz-transform: scale(0.95);
+        -o-transform: scale(0.95);
+    }
+    
+    .loading {
+        display: inline-block;
+        margin-top: 50%;
+        padding: 0px;
+        width: 25px;
+        height: 25px;
+        border-radius: 100%;
+        border: 5px solid;
+        border-top-color: rgba(254, 168, 23, 0.65);
+        border-bottom-color: rgba(57, 154, 219, 0.65);
+        border-left-color: rgba(188, 84, 93, 0.95);
+        border-right-color: rgba(137, 188, 79, 0.95);
+        -webkit-animation: loader 2s ease-in-out infinite alternate;
+    }
+    
+    #mask {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        /* height: 100vh;*/
+        background-color: #353d41;
+        text-align: center;
+        z-index: 5;
+    }
+    
+    #mask.loade {
+        visibility: visible;
+        background-color: #fff;
+        opacity: 0.6;
+    }
+    
+    .fade {
+        visibility: hidden;
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 0.5s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: 1;
+    }
+    
+    .dot-before,
+    .dot-after {
+        float: left;
+        display: block;
+        width: 0px;
+        height: 0px;
+    }
+    
+    .soldout-desc {
+        font-size: 1.6rem;
+        font-size:
+    }
+    
+    #result {
+        margin-top: 40%;
+    }
+    
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(-360deg);
+        }
+    }
+    
+    @-webkit-keyframes spin {
+        from {
+            -webkit-transform: rotate(0deg);
+        }
+        to {
+            -webkit-transform: rotate(-360deg);
+        }
+    }
+    
+    @-moz-keyframes spin {
+        from {
+            -moz-transform: rotate(0deg);
+        }
+        to {
+            -moz-transform: rotate(-360deg);
+        }
+    }
+    
+    @-o-keyframes spin {
+        from {
+            -o-transform: rotate(0deg);
+        }
+        to {
+            -o-transform: rotate(-360deg);
+        }
+    }
+    
+    @-ms-keyframes spin {
+        from {
+            -ms-transform: rotate(0deg);
+        }
+        to {
+            -ms-transform: rotate(-360deg);
+        }
+    }
+    
+    @keyframes loader {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(720deg);
+        }
+    }
+    
+    @-webkit-keyframes loader {
+        from {
+            -webkit-transform: rotate(0deg);
+        }
+        to {
+            -webkit-transform: rotate(720deg);
+        }
+    }
+    
+    @-moz-keyframes loader {
+        from {
+            -moz-transform: rotate(0deg);
+        }
+        to {
+            -moz-transform: rotate(720deg);
+        }
+    }
+    
+    @-o-keyframes loader {
+        from {
+            -o-transform: rotate(0deg);
+        }
+        to {
+            -o-transform: rotate(720deg);
+        }
+    }
+    
+    @-ms-keyframes loader {
+        from {
+            -ms-transform: rotate(0deg);
+        }
+        to {
+            -ms-transform: rotate(720deg);
+        }
+    }
+    /*跳跃*/
+    /*左右移动*/
+    
+    @keyframes move {
+        100% {
+            left: 57%;
+        }
+    }
+    
+    @-webkit-keyframes move {
+        100% {
+            left: 57%;
+        }
+    }
+    
+    @-moz-keyframes move {
+        100% {
+            left: 57%;
+        }
+    }
+    
+    @-ms-keyframes move {
+        100% {
+            left: 57%;
+        }
+    }
+    
+    @-o-keyframes move {
+        100% {
+            left: 57%;
+        }
+    }
+    
+    @keyframes shopmove {
+        100% {
+            left: 57%;
+        }
+    }
+    /*店铺移动*/
+    
+    @-webkit-keyframes shopmove {
+        100% {
+            left: 100%;
+        }
+    }
+    
+    @-moz-keyframes shopmove {
+        100% {
+            left: 100%;
+        }
+    }
+    
+    @-ms-keyframes shopmove {
+        100% {
+            left: 100%;
+        }
+    }
+    
+    @-o-keyframes shopmove {
+        100% {
+            left: 100%;
+        }
+    }
+    /*渐隐*/
+    
+    @keyframes fade {
+        0% {
+            opacity: 1;
+            visibility: visible;
+        }
+        100% {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    
+    @-webkit-keyframes fade {
+        0% {
+            opacity: 1;
+            visibility: visible;
+        }
+        80% {
+            opacity: .9;
+            visibility: visible;
+        }
+        100% {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    
+    @-moz-keyframes fade {
+        0% {
+            opacity: 1;
+            visibility: visible;
+        }
+        100% {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    
+    @-o-keyframes fade {
+        0% {
+            opacity: 1;
+            visibility: visible;
+        }
+        100% {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    
+    @-ms-keyframes fade {
+        0% {
+            opacity: 1;
+            visibility: visible;
+        }
+        100% {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    /*魅族3*/
+    
+    @media screen and (device-aspect-ratio: 3/5) {
+        .amount {
+            margin-bottom: 5%;
+        }
+    }
+    /*iphone6 plus*/
+    
+    @media screen and (device-aspect-ratio: 375/667) {
+        .amount {
+            margin-bottom: 6%;
+        }
+        .down {
+            margin-top: 6%;
+        }
+    }
+    /*iphone6 plus*/
+    
+    @media screen and (device-aspect-ratio: 9/16) {
+        .amount {
+            margin-bottom: 5%;
+        }
+        .down {
+            margin-top: 10%;
+        }
+    }
+    
+    .winnersWrapper {
+        position: relative;
+        top: -2px;
+        padding-left: 6.5%;
+        padding-right: 6.5%;
+        color: #BDBCB7;
+        background-color: #FFFFF3;
+    }
+    
+    #winners {}
+    
+    .winnersCaption {
+        margin-bottom: 1vh;
+        padding: 2px 0 2px 0;
+        font-size: 1.65rem;
+        font-size: 3.27vw;
+    }
+    
+    .singleWinner {
+        padding-bottom: 4%;
+        padding-top: 4%;
+        border-bottom: 2px solid rgb(231, 231, 211);
+    }
+    
+    .userName,
+    .money,
+    .comment,
+    .timeStamp {
+        margin: 3px;
+    }
+    
+    .comment,
+    .timeStamp {
+        font-size: 1.65rem;
+        font-size: 3.27vw;
+    }
+    
+    .comment {
+        display: block;
+        margin-top: 2%;
+    }
+    
+    .userName {
+        color: black;
+        font-size: 1rem;
+        font-size: 4.54vw;
+        margin-right: 10px;
+    }
+    
+    .money {
+        float: right;
+        font-size: 2.15rem;
+        font-size: 4.3vw;
+        color: red;
+    }

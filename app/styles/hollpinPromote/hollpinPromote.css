@@ -1,0 +1,1165 @@
+@charset "utf-8";
+/*
+    Document   : CSS样式初始化
+    Created on : 2013. 8. 6,15:41:00
+    Author     :
+    Description:
+        CSS样式表的初始化，全局样式设置。部分样式属性请根据具体页面重置其属性
+        导入方式：<link href="css/common.css" rel="stylesheet" type="text/css" />
+*/
+/* reset */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, textarea, button {
+    margin: 0;
+    padding: 0
+}
+
+/* 初始化标签在所有浏览器中的margin、padding值 */
+fieldset, img {
+    border: 0 none
+}
+
+/* 重置fieldset（表单分组）、图片的边框为0*/
+dl, ul, ol, menu, li {
+    list-style: none
+}
+
+/* 重置类表前导符号为onne,menu在HTML5中有效 */
+blockquote, q {
+    quotes: none
+}
+
+/* 重置嵌套引用的引号类型 */
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none
+}
+
+/* 重置嵌套引用*/
+input, select, textarea, button {
+    vertical-align: middle
+}
+
+/* 重置表单控件垂直居中*/
+button {
+    border: 0 none;
+    background-color: transparent;
+    cursor: pointer
+}
+
+/* 重置表单button按钮效果 */
+body {
+    background: #fff
+}
+
+/* 重置body 页面背景为白色 */
+body, th, td, input, select, textarea, button {
+    font-size: 12px;
+    line-height: 1;
+    font-family: "微软雅黑", "黑体", "宋体";
+    color: #666
+}
+
+/* 重置页面文字属性 */
+a {
+    color: #666;
+    text-decoration: none
+}
+
+/* 重置链接a标签 */
+a:active, a:hover {
+    text-decoration: none
+}
+
+/* 重置链接a标签的鼠标滑动效果 */
+address, caption, cite, code, dfn, em, var {
+    font-style: normal;
+    font-weight: normal
+}
+
+/* 重置样式标签的样式 */
+caption {
+    display: none;
+}
+
+/* 重置表格标题为隐藏 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+/* 重置table属性 */
+img {
+    vertical-align: top
+}
+
+/* 图片在当前行内的垂直位置 */
+
+/* 页面设置 */
+
+/* 取消a标签点击后的虚线框 */
+a {
+    outline: none;
+}
+
+a:active {
+    star: expression(this.onFocus=this.blur());
+}
+
+/* 设置页面文字等在拖动鼠标选中情况下的背景色与文字颜色 */
+/*
+::selection {color: #fff;background-color: #4C6E78;}
+::-moz-selection {color: #fff;background-color: #4C6E78;}
+*/
+
+/*========================================nick  css 样式==============================*/
+
+/*页面切换*/
+html, body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    /*background: #eee;*/
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.swiper-container,
+.swiper-wrapper,
+.swiper-slide {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*向上箭头图标动画*/
+
+.up-arrow {
+    position: absolute;
+    bottom: 8%;
+    left: 47%;
+    z-index: 200;
+    -webkit-animation: opacity1 0.8s both 1s;
+    -moz-animation: opacity1 0.8s both 1s;
+    -o-animation: opacity1 0.8s both 1s;
+    animation: opacity1 0.8s both 1s;
+}
+
+.up-arrow-1 {
+    width: 50px;
+    height: 50px;
+    -webkit-animation: upDown 2s both ease 1s infinite;
+    -moz-animation: upDown 2s both ease 1s infinite;
+    -o-animation: upDown 2s both ease 1s infinite;
+    animation: upDown 2s both ease 1s infinite;
+}
+
+/* up-arrow动画 */
+@-webkit-keyframes opacity1 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes opacity1 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes opacity1 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes opacity1 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes upDown {
+    0% {
+        -webkit-transform: translateY(8px);
+        opacity: 0;
+    }
+    50% {
+        -webkit-transform: translateY(0px);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(-8px);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes upDown {
+    0% {
+        -moz-transform: translateY(8px);
+        opacity: 0;
+    }
+    50% {
+        -moz-transform: translateY(0px);
+        opacity: 1;
+    }
+    100% {
+        -moz-transform: translateY(-8px);
+        opacity: 0;
+    }
+}
+
+@-o-keyframes upDown {
+    0% {
+        -o-transform: translateY(8px);
+        opacity: 0;
+    }
+    50% {
+        -o-transform: translateY(0px);
+        opacity: 1;
+    }
+    100% {
+        -o-transform: translateY(-8px);
+        opacity: 0;
+    }
+}
+
+@keyframes upDown {
+    0% {
+        transform: translateY(8px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-8px);
+        opacity: 0;
+    }
+}
+
+/*
+.up-arrow-1{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 30%;
+    !*bottom: 20%;*!
+    left: 50%;
+    z-index: 9999999;
+    !*animation:up-arrow 1s infinite alternate;*!
+    animation: up-arrow-1 2s both ease 1s infinite;
+    !*-webkit-animation:up-arrow 1s infinite alternate;*!
+    -webkit-animation: up-arrow-1 2s both ease 1s infinite;
+}*/
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    /*background: #fff;*/
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    /*display: -webkit-flex;*/
+    /*display: flex;*/
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    /*-webkit-justify-content: center;*/
+    /*justify-content: center;*/
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    /*-webkit-align-items: center;*/
+    /*align-items: center;*/
+}
+
+.start-answer-btn {
+    position: absolute;
+    left: 2.60rem;
+    bottom: 2.37rem;
+    width: 2.29rem;
+    height: 0.57rem;
+    /*border: 2px solid red;*/
+    background: url("../../images/hollpinPromote/0/start-answer.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    border: none;
+    display: none;
+    z-index: 9999;
+}
+
+.cover,
+.first-question,
+.second-question,
+.page6,
+.third-question,
+.page8,
+.fourth-question,
+.page10,
+.back {
+    background-image: url("../../images/hollpinPromote/0/background.png");
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    vertical-align: middle;
+    text-align: center;
+    position: fixed;
+}
+
+.cover {
+    z-index: 999;
+}
+
+.cover-img-1 {
+    position: absolute;
+    top: 1.20rem;
+    right: 1.00rem;
+    width: 1.72rem;
+    height: 0.30rem;
+    display: none;
+}
+
+.first-question-img-16,
+.second-question-img-16,
+.third-question-img-16,
+.fourth-question-img-16{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+    width: 7.5rem;
+    height: 10.14rem;
+    display: none;
+}
+
+.first-question-img-16-show,
+.second-question-img-16-show,
+.third-question-img-16-show,
+.fourth-question-img-16-show{
+    position: absolute;
+    z-index: 9999999;
+    animation: cinematic-sequences 3s;
+    display: block;
+    /*opacity: 0;*/
+}
+
+@keyframes cinematic-sequences {
+    0% {
+       display: block;
+        opacity: 1;
+    }
+    35% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes cinematic-sequences {
+    0% {
+        display: block;
+        opacity: 1;
+    }
+    35% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
+
+.first-question-img-01,
+.first-question-img-12,
+.second-question-img-01,
+.second-question-img-11,
+.third-question-img-11,
+.third-question-img-01,
+.fourth-question-img-01,
+.fourth-question-img-12,
+.back-img-01 {
+    position: absolute;
+    top: 0.80rem;
+    left: 0.50rem;
+    width: 6.51rem;
+    height: 10.19rem;
+    border-style: none;
+}
+
+.third-question-img-11,
+.first-question-img-12,
+.fourth-question-img-12,
+.second-question-img-11 {
+    display: none;
+}
+
+.first-question-img-02,
+.first-question-img-03,
+.second-question-img-02,
+.second-question-img-03,
+.third-question-img-02,
+.third-question-img-03,
+.fourth-question-img-02,
+.fourth-question-img-03,
+.back-img-02,
+.back-img-03 {
+    width: 2.92rem;
+    height: 0.76rem;
+    position: absolute;
+    bottom: 1.00rem;
+    z-index: 2;
+}
+
+.first-question-img-02,
+.second-question-img-02,
+.third-question-img-02,
+.fourth-question-img-02,
+.back-img-02 {
+    position: absolute;
+    left: 0.55rem;
+}
+
+.first-question-img-03,
+.second-question-img-03,
+.third-question-img-03,
+.fourth-question-img-03,
+.back-img-03 {
+    position: absolute;
+    right: 0.55rem;
+}
+
+.first-question-img-04,
+.first-question-img-05,
+.second-question-img-04,
+.second-question-img-05,
+.third-question-img-04,
+.third-question-img-05,
+.fourth-question-img-04,
+.fourth-question-img-05,
+.back-img-06,
+.back-img-07 {
+    width: 2.36rem;
+    height: 0.59rem;
+    position: absolute;
+    bottom: 1.10rem;
+    left: 0.85rem;
+    z-index: 100;
+}
+
+.first-question-img-05,
+.first-question-img-07,
+.second-question-img-05,
+.third-question-img-05,
+.second-question-img-07,
+.third-question-img-07,
+.fourth-question-img-05,
+.back-img-05 {
+    display: none;
+}
+
+.first-question-img-06,
+.first-question-img-07,
+.second-question-img-06,
+.second-question-img-07,
+.second-question-img-12,
+.second-question-img-13,
+.third-question-img-06,
+.third-question-img-07,
+.third-question-img-12,
+.third-question-img-13,
+.fourth-question-img-06,
+.fourth-question-img-07,
+.fourth-question-img-13,
+.fourth-question-img-14,
+.back-img-04,
+.back-img-05 {
+    width: 2.37rem;
+    height: 0.59rem;
+    position: absolute;
+    bottom: 1.10rem;
+    right: 0.85rem;
+    z-index: 100;
+}
+
+.second-question-img-12,
+.second-question-img-13,
+.third-question-img-07,
+.third-question-img-12,
+.third-question-img-13,
+.fourth-question-img-07,
+.fourth-question-img-13,
+.fourth-question-img-14,
+.back-img-07 {
+    display: none;
+}
+
+.first-question-img-08 {
+    width: 3.17rem;
+    height: 2.57rem;
+    position: absolute;
+    top: 4.00rem;
+    left: 0.80rem;
+    z-index: 3;
+}
+
+.first-question-img-09 {
+    position: absolute;
+    top: 3.50rem;
+    left: 4.00rem;
+    z-index: 5;
+    width: 2.35rem;
+    height: 2.38rem;
+    float: right;
+    display: none;
+}
+
+.first-question-img-10 {
+    position: absolute;
+    top: 4.60rem;
+    left: 3.95rem;
+    width: 0.65rem;
+    height: 0.66rem;
+    display: none;
+}
+
+.first-question-img-11 {
+    position: absolute;
+    top: 5.25rem;
+    left: 5.10rem;
+    width: 0.93rem;
+    height: 0.43rem;
+    display: none;
+}
+
+.first-question-img-13 {
+    position: absolute;
+    z-index: 5;
+    width: 6.10rem;
+    height: 5.43rem;
+    top: 5.75rem;
+    right: 1.16rem;
+    display: none;
+}
+
+.second-question-img-08 {
+    position: absolute;
+    top: 3.50rem;
+    right: 1.50rem;
+    width: 3.25rem;
+    height: 0.81rem;
+    z-index: 10000;
+    display: none;
+}
+
+.second-question-img-09 {
+    position: absolute;
+    top: 4.3rem;
+    left: 4rem;
+    width: 0.65rem;
+    height: 0.66rem;
+    transform: rotate(130deg);
+    -o-transform: rotate(130deg);
+    -webkit-transform: rotate(130deg);
+    -moz-transform: rotate(130deg);
+    z-index: 10000;
+    display: none;
+}
+
+.second-question-img-10 {
+    position: absolute;
+    right: 3.9rem;
+    bottom: 7.35rem;
+    width: 3.05rem;
+    height: 2.46rem;
+    /*display: none;*/
+}
+
+.second-question-img-14 {
+    position: absolute;
+    top: 4.30rem;
+    right: 2.40rem;
+    width: 4.34rem;
+    height: 6.83rem;
+    display: none;
+}
+
+.third-question-img-08 {
+    position: absolute;
+    top: 3.80rem;
+    right: 4.40rem;
+    width: 2.07rem;
+    height: 1.74rem;
+}
+
+.third-question-img-09 {
+    position: absolute;
+    top: 3.20rem;
+    right: 2.00rem;
+    width: 1.48rem;
+    height: 1.23rem;
+    display: none;
+}
+
+.third-question-img-10 {
+    position: absolute;
+    top: 4.50rem;
+    right: 2.05rem;
+    width: 0.65rem;
+    height: 0.66rem;
+    transform: rotate(260deg);
+    display: none;
+}
+
+.third-question-img-14 {
+    position: absolute;
+    top: 4.56rem;
+    left: 0.01rem;
+    width: 6.12rem;
+    height: 6.74rem;
+    display: none;
+}
+
+.fourth-question-img-15 {
+    position: absolute;
+    left: 0;
+    top: 5.01rem;
+    width: 5.46rem;
+    height: 6.14rem;
+    display: none;
+}
+
+.page4-img-02 {
+    width: 7.50rem;
+    height: 12.10rem;
+    position: absolute;
+    top: 1.50rem;
+    right: 0.42rem;
+}
+
+.first-question-img-14,
+.first-question-img-15 {
+    width: 2.37rem;
+    height: 0.59rem;
+    position: absolute;
+    bottom: 1.10rem;
+    right: 0.85rem;
+    z-index: 4;
+    display: none;
+}
+
+.page6-img-08 {
+    position: absolute;
+    top: 4.30rem;
+    right: 2.5rem;
+    z-index: 6;
+    width: 4.36rem;
+    height: 6.83rem;
+}
+
+.page8-img-08 {
+    position: absolute;
+    top: 4.55rem;
+    width: 6.12rem;
+    height: 6.74rem;
+    right: 1.3rem;
+}
+
+.fourth-question-img-08 {
+    position: absolute;
+    top: 4.52rem;
+    right: 1.75rem;
+    width: 3.54rem;
+    height: 3.54rem;
+}
+
+.fourth-question-img-09 {
+    position: absolute;
+    top: 4.30rem;
+    right: 1.82rem;
+    width: 0.87rem;
+    height: 0.56rem;
+    display: none;
+}
+
+.fourth-question-img-10 {
+    position: absolute;
+    top: 4.85rem;
+    left: 4.80rem;
+    width: 0.91rem;
+    height: 0.45rem;
+    display: none;
+}
+
+.fourth-question-img-11 {
+    position: absolute;
+    top: 5.50rem;
+    left: 4.90rem;
+    width: 0.65rem;
+    height: 0.66rem;
+    transform: rotate(222deg);
+    display: none;
+}
+
+.page10-img-08 {
+    position: absolute;
+    right: 2.04rem;
+    top: 5.01rem;
+    width: 5.46rem;
+    height: 6.14rem;
+}
+
+.cover-img-03 {
+    position: absolute;
+    left: 0.80rem;
+    right: 0.80rem;
+    top: 1.80rem;
+    z-index: 2;
+    width: 6.00rem;
+    height: 11.01rem;
+}
+
+.fly {
+    /*opacity: 0;
+    transition: all 2s;
+    margin-top: -5rem;*/
+    animation: fly4 3s;
+    /*opacity: 0;*/
+
+    top: 1.2rem;
+}
+
+.scale {
+    transform: scale(1.1);
+    transform-origin: 50% 50%;
+}
+
+/*拖动试卷动画*/
+@-webkit-keyframes fly4 {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        top: 0;
+    }
+    35% {
+        top: -5rem;
+        opacity: 0.8;
+    }
+    70% {
+        width: 6.88rem !important;
+        height: 11.01rem;
+        transform: scale(1.5)
+    }
+    100% {
+        top: 1.8rem;
+    }
+
+}
+
+@-moz-keyframes fly4 {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        top: 0;
+    }
+    35% {
+        top: -5rem;
+        opacity: 0.8;
+    }
+    70% {
+        width: 6.88rem !important;
+        height: 11.01rem;
+        transform: scale(1.15)
+    }
+    100% {
+        top: 1.8rem;
+    }
+}
+
+@-o-keyframes fly4 {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        top: 0;
+    }
+    35% {
+        top: -5rem;
+        opacity: 0.8;
+    }
+    70% {
+        width: 6.88rem !important;
+        height: 11.01rem;
+        transform: scale(1.15)
+    }
+    100% {
+        top: 1.8rem;
+    }
+}
+
+@keyframes fly4 {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        top: 0;
+    }
+    35% {
+        top: -5rem;
+        opacity: 0.8;
+    }
+    70% {
+        width: 6.88rem !important;
+        height: 11.01rem;
+        transform: scale(1.15)
+    }
+    100% {
+        top: 1.8rem;
+    }
+}
+
+/*拖动试卷袋动画*/
+.fly2 {
+    animation: fly3 2s;
+    opacity: 0;
+}
+
+@-webkit-keyframes fly4 {
+    0% {
+        opacity: 1;
+        top: 0;
+    }
+    70% {
+        top: 5rem;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        top: 6rem;
+    }
+}
+
+@-moz-keyframes fly4 {
+    0% {
+        opacity: 1;
+        top: 0;
+    }
+    70% {
+        top: 5rem;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        top: 6rem;
+    }
+}
+
+@-o-keyframes fly4 {
+    0% {
+        opacity: 1;
+        top: 0;
+    }
+    70% {
+        top: 5rem;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        top: 6rem;
+    }
+}
+
+@keyframes fly3 {
+    0% {
+        opacity: 1;
+        top: 0;
+    }
+    70% {
+        top: 5rem;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        top: 6rem;
+    }
+
+}
+
+/*.questions {
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    vertical-align: middle;
+    text-align: center;
+    !*opacity: 0;*!
+    display: none;
+}*/
+
+.questions-img-01 {
+    /*margin: 0 auto;*/
+    /* width: 6.88rem;
+     vertical-align: middle;
+     height: 11.01rem;*/
+    width: 6.00rem;
+    height: 11.01rem;
+    line-height: 11.01rem;
+    /*position: absolute;*/
+    /*top: 0.80rem;*/
+    /*left: 0.80rem;*/
+    /*display: none;*/
+}
+
+.questions-img-02 {
+    position: absolute;
+    left: 2.40rem;
+    bottom: 2.30rem;
+    width: 2.92rem;
+    height: 0.76rem;
+    display: none;
+    z-index: 4;
+}
+
+.questions-img-03 {
+    position: absolute;
+    left: 2.60rem;
+    bottom: 2.37rem;
+    width: 2.29rem;
+    height: 0.57rem;
+    display: none;
+    z-index: 5;
+}
+
+.advance-paper-btn {
+    position: absolute;
+    left: 0.85rem;
+    bottom: 1.10rem;
+    width: 2.29rem;
+    height: 0.57rem;
+    /* border: 2px solid red; */
+    background: url("../../images/hollpinPromote/2/advance-paper.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    border-style: none;
+    border-color: none;
+    /* display: none; */
+    z-index: 9999;
+}
+
+.questions-img-04 {
+    position: absolute;
+    left: 2.60rem;
+    bottom: 2.37rem;
+    width: 2.29rem;
+    height: 0.57rem;
+    display: none;
+    z-index: 5;
+}
+
+#paper-bag {
+    position: relative;
+}
+
+.cover-img-02 {
+    margin-top: 4.5rem;
+    position: absolute;
+    top: 0;
+    left: 0.25rem;
+    z-index: 5;
+    width: 7.05rem;
+    height: 8.88rem;
+}
+
+.cover-img-04 {
+    margin-top: 3.45rem;
+    position: absolute;
+    top: 0;
+    left: 0.32rem;
+    width: 6.91rem;
+    height: 1.38rem;
+    z-index: 1;
+}
+
+.fly5 {
+    display: block;
+    position: absolute;
+    z-index: 1000;
+    animation: fly6 5s;
+}
+
+/*开始答题出现动画*/
+@keyframes fly6 {
+    0% {
+        opacity: 0;
+    }
+    /*30% {*/
+    /*opacity: 0.25;*/
+    /*}*/
+    /*60% {*/
+    /*opacity: 0.5;*/
+    /*}*/
+    100% {
+        opacity: 1;
+    }
+}
+
+/*切换页面*/
+.first-question1 {
+    /*animation: mymove 5s;*/
+    /*-webkit-animation: mymove 5s;*/
+    /*opacity: 0;*/
+    /*display: none;*/
+    position: absolute;
+    background-image: url("../../images/hollpinPromote/0/switching-figure.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 99999;
+}
+
+@keyframes mymove {
+    0% {
+        top: -1.00rem;
+        opacity: 1;
+
+    }
+    50% {
+        top: -3.00rem;
+        opacity: 1;
+    }
+    100% {
+        top: -5.00rem;
+        opacity: 1;
+    }
+}
+
+/*呈现页面*/
+.rendering-page {
+    animation: rendering 5s;
+    -webkit-animation: rendering 5s;
+    /*opacity: 0;*/
+    display: block;
+}
+
+@keyframes rendering {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/*音效*/
+
+@keyframes rotataZ {
+    /*0% {
+        -webkit-transform: rotateZ(0deg);
+    }
+    100% {
+        -webkit-transform: rotateZ(360deg);
+    }*/
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rotataZ {
+    /*0% {
+        -webkit-transform: rotateZ(0deg);
+    }
+    100% {
+        -webkit-transform: rotateZ(360deg);
+    }*/
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+#musicControl {
+    position: fixed;
+    right: 0.1rem;
+    top: 0.2rem;
+    margin-top: 0;
+    display: inline-block;
+    z-index: 99999999;
+    -webkit-animation: rotataZ 1000ms linear infinite;
+    -moz-animation: rotataZ 1000ms linear infinite;
+    -ms-animation: rotataZ 1000ms linear infinite;
+    animation: rotataZ 1000ms linear infinite;
+}
+
+#musicControl a {
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    overflow: hidden;
+    background: url('../../images/nick/music-16a4e0f1.png') no-repeat;
+    background-size: 100%;
+}
+
+#musicControl a audio {
+    width: 100%;
+    height: 100%;
+}
+
+#musicControl a.stop {
+    background-position: left bottom;
+}
+
+#musicControl a.on {
+    background-position: 0 0;
+    -webkit-animation: reverseRotataZ 0.5s linear infinite;
+}
+
+#music_play_filter {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999998;
+}
+
+

@@ -1,0 +1,435 @@
+    @-webkit-keyframes jump {
+        0 {
+            top: 2%;
+        }
+        50% {
+            top: 2%;
+        }
+        75% {
+            top: 0%;
+        }
+        100% {
+            top: 2%;
+        }
+    }
+    
+    @-webkit-keyframes move {
+        0 {
+            left: -15%;
+        }
+        100% {
+            left: 100%;
+        }
+    }
+    
+    @-webkit-keyframes shopmove {
+        100% {
+            left: 100%;
+        }
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body,
+    html {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        max-width: 600px;
+        font-size: 0;
+        -webkit-text-size-adjust: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        -webkit-font-smoothing: antialiased;
+    }
+    div{
+        text-align: center;
+    }
+    
+    .bg {
+        background-color: #353d41;
+    }
+    
+    .up {
+        text-align: center;
+        background-color: #9edffb;
+    }
+    
+    .middle {
+        position: relative;
+        text-align: center;
+    }
+    
+    .down {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        max-width: 450px;
+    }
+    
+    .sky {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+    }
+    
+    .car {
+        position: absolute;
+        top: 2%;
+        left: 25%;
+        width: 50%;
+        z-index: 3;
+    }
+    
+    .car {
+        -webkit-animation-name: jump;
+        -webkit-animation-duration: 3s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+    }
+    
+    .cloud {
+        position: absolute;
+        left: -15%;
+        margin-top: 5%;
+        width: 15.9%;
+        z-index: 1;
+    }
+    
+    .cloud {
+        -webkit-animation-name: move;
+        -webkit-animation-duration: 12s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+    }
+    
+    .cloud-bottom {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        z-index: 3;
+    }
+    
+    .shop {
+        position: relative;
+        margin-top: 5%;
+        width: 251.04%;
+        left: -251.04%;
+        z-index: 2;
+    }
+    
+    .shop {
+        -webkit-animation-name: shopmove;
+        -webkit-animation-duration: 16s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+    }
+    
+    .coupon-wrap {
+        position: relative;
+        text-align: center;
+    }
+    
+    .superiority {
+        width: 100%;
+        margin-top: 2%;
+    }
+    
+    .coupon {
+        position: relative;
+        width: 100%;
+        margin-bottom: 0;
+    }
+    
+    .pro-wrap {
+        padding: 3%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        background-color: rgb(40, 46, 49);
+    }
+    
+    .pro-wrap img {
+        float: left;
+        width: 23.11%;
+    }
+    
+    .phone-wrap {
+        position: absolute;
+        top: 32%;
+        left: 0;
+        width: 100%;
+        height: 30px;
+        text-align: center;
+        z-index: 3;
+    }
+    
+    input.phone {
+        outline: none;
+        text-align: center;
+    }
+    
+    .phone::-webkit-input-placeholder {
+        font-size: 20px;
+    }
+    
+    .phone::-moz-placeholder {
+        font-size: 20px
+    }
+    
+    .phone {
+        width: 50%;
+        height: 160%;
+        line-height: 160%;
+        font-size: 30px;
+        border-radius: 8px;
+    }
+    
+    a.btn {
+        position: absolute;
+        background-color: rgb(177, 180, 181);
+        color: rgb(132, 129, 129);
+    }
+    
+    .btn.active {
+        background-color: #fff;
+        color: rgb(221, 221, 221);
+    }
+    
+    .btn {
+        left: 25%;
+        top: 250%;
+        width: 50%;
+        height: 200%;
+        border-radius: 8px;
+        line-height: 250%;
+        font-size: 25px;
+    }
+    
+    .cash {
+        position: absolute;
+        left: 0;
+        top: -42%;
+        width: 100%;
+        z-index: -1;
+    }
+    
+    .cash img {
+        width: 100%;
+    }
+    
+    .msg {
+        position: absolute;
+        top: -26%;
+        width: 100%;
+        font-size: 20px;
+    }
+    
+    .count {
+        margin-bottom: 2%;
+        font-size: 18px;
+        color: rgb(170, 143, 47);
+    }
+    
+    #count,
+    .amount {
+        color: rgb(241, 47, 37);
+    }
+    
+    .amount {
+        margin-bottom: 7%;
+        font-size: 54px;
+    }
+    
+    .desc {
+        font-size: 18px;
+        color: rgb(255, 203, 180);
+    }
+    
+    #phone {
+        color: rgb(255, 233, 82);
+    }
+    
+    .msg>span {
+        display: inline-block;
+    }
+    
+    .msg>span:nth-child(2) {
+        display: block;
+    }
+    
+    .hide {
+        display: none;
+    }
+    
+    #openxmlife {
+        position: absolute;
+        top: 47%;
+        width: 100%;
+        left: 0;
+    }
+    
+    #openxmlife.active {
+        -webkit-transform: scale(0.95);
+        -moz-transform: scale(0.95);
+        -o-transform: scale(0.95);
+    }
+    
+    .pics img {
+        float: left;
+        width: 20%;
+    }
+    /*横屏*/
+    
+    @media screen and (orientation: landscape) {
+        body {
+            overflow-y: scroll;
+        }
+        .down {
+            position: relative;
+            width: 100%;
+            max-width: auto;
+            margin-left: 12%;
+        }
+        .cloud-bottom {
+            position: relative;
+            margin-top: -100%;
+        }
+    }
+    /*竖屏*/
+    
+    @media screen and (orientation: portrait) {
+        /*2:3(iphone3~4S)*/
+        
+        @media screen and (aspect-ratio: 2/3) {
+            .pro-wrap img {
+                float: left;
+                width: 19%;
+            }
+            .coupon {
+                width: 85%;
+            }
+            .phone {
+                width: 45%;
+                height: 110%;
+                line-height: 110%;
+                font-size: 23px;
+                border-radius: 4px;
+            }
+            .btn {
+                left: 27.5%;
+                top: 180%;
+                width: 45%;
+                height: 140%;
+                line-height: 200%;
+                border-radius: 4px;
+                font-size: 20px;
+            }
+            .phone::-webkit-input-placeholder {
+                font-size: 16px;
+            }
+            .phone::-moz-placeholder {
+                font-size: 16px
+            }
+            .cash {
+                position: absolute;
+                left: 7.5%;
+                top: -42%;
+                width: 85%;
+                z-index: -1;
+            }
+            .msg {
+                top: -34%;
+            }
+            .count {
+                font-size: 10px;
+            }
+            .amount {
+                font-size: 36px;
+            }
+            .desc {
+                font-size: 10px;
+            }
+            #openxmlife {
+                width: 80%;
+                top: 47%;
+                left: 13%;
+            }
+        }
+        /*(iphone5S)*/
+        
+        @media screen and (device-width: 320px) and (aspect-ratio: 40/71) {
+            .phone {
+                width: 50%;
+                height: 140%;
+                line-height: 140%;
+                font-size: 26px;
+                border-radius: 6px;
+            }
+            .btn {
+                left: 25%;
+                top: 200%;
+                width: 50%;
+                height: 140%;
+                line-height: 200%;
+                border-radius: 6px;
+                font-size: 20px;
+            }
+            .phone::-webkit-input-placeholder {
+                font-size: 18px;
+            }
+            .phone::-moz-placeholder {
+                font-size: 18px
+            }
+            .msg {
+                top: -30%;
+            }
+            .count {
+                font-size: 14px;
+            }
+            .amount {
+                font-size: 42px;
+            }
+            .desc {
+                font-size: 14px;
+            }
+        }
+        /*(iphone6)*/
+        
+        @media screen and (device-width: 375px) and (aspect-ratio: 375/667) {
+            .msg {
+                top: -30%;
+            }
+            .count {
+                font-size: 16px;
+            }
+            .amount {
+                font-size: 50px;
+            }
+            .desc {
+                font-size: 16px;
+            }
+        }
+        /*samsung note3*/
+        
+        @media screen and (aspect-ratio: 9/16) {
+            .msg {
+                top: -30%;
+            }
+            .count {
+                font-size: 16px;
+            }
+            .amount {
+                font-size: 42px;
+            }
+            .desc {
+                font-size: 16px;
+            }
+        }
+    }

@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title>hollpin:美好生活的开始</title>
+    <meta name="keywords" content="hollpin:美好生活的开始">
+    <meta name="description" content="hollpin:美好生活的开始">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- build:css(.tmp) styles/hollpin-pc.css -->
+    <link href="styles/hollpin-pc.css" rel="stylesheet"/>
+    <!-- endbuild -->
+
+    <script type="text/javascript" src="scripts/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.qrcode.min.js"></script>
+
+</head>
+<body>
+<div class="hollpin-pc">
+    <div class="header">
+        <div class="header-a"><img class="header-one" src="images/hollpin-pc/header-one.png"/></div>
+        <div class="header-b"><img class="header-two" src="images/hollpin-pc/header-two.png"/></div>
+    </div>
+    <div class="download-description">
+        <div class="round-icon"><img class="round-icon-one" src="images/hollpin-pc/round-icon-two.png"/></div>
+        <!--<div class="title-one-a-pc"><img class="title-one-pc" src="img/hollpin-pc/title-one-pc.png"/></div>
+        <div class="title-two-a-pc"><img class="title-two-pc" src="img/hollpin-pc/title-two-pc.png"/></div>-->
+        <div class="title-one-b-pc"><img class="title-new" src="images/hollpin-pc/title-one-b-pc.png"/></div>
+
+        <div id="_qrcode"></div>
+        <!--<div class="qr-code"><img class="qr-code-one" src="img/hollpin-pc/qrcode.png"/></div>-->
+        <div class="scan-download"><img class="scan-download-one" src="images/hollpin-pc/scan-download.png"/></div>
+        <div class="ios-download-a">
+            <button class="ios-download" onclick="iosDownload()"><img class="ios-icon"
+                                                                      src="images/hollpin-pc/ios-icon.png"/>&nbsp;<span
+                    class="ios-download-title">下载 iPhone 版</span></button>
+        </div>
+        <div class="android-download-a">
+            <button class="android-download" onclick="androidDownload()"><img class="android-icon"
+                                                                              src="images/hollpin-pc/android-icon.png"/>&nbsp;<span
+                    class="android-download-title">下载 Android 版</span></button>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var iosDownload = function () {
+        console.log('下载iPhone版');
+        window.location = "http://itunes.apple.com/gb/app/yi-dong-cai-bian/id1025410959?mt=8";
+//        window.open("http://cdn.xiaomei.com/app/xmlife/xmlife_2.5.169.apk");
+//        alert('敬请期待......');
+
+    };
+    var androidDownload = function () {
+        console.log('下载Android版');
+        window.location = "http://res.kingxique.com/android/hollpin-1.0.16.apk";
+    };
+    /*$('#_qrcode').qrcode("http://www.helloweba.com"); //任意字符串*/
+    $("#_qrcode").qrcode({
+        render: "table", //table方式
+        width: 161.459, //宽度
+        height: 160.459, //高度
+        text: "https://www.kingxique.com/download/hollpin-app.html" //任意内容
+    });
+</script>
+
+</body>
+</html>

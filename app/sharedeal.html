@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>我在用小美快购手机客户端</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="screen-orientation" content="portrait">
+    <!-- uc强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="share-title" content="你的菜钱我出了！快来抢红包一起用~">
+    <meta name="share-desc" content="蔬果生鲜，食品百货：超市代买，1小时速达！">
+    <script src="config/urls.js"></script>
+    <!-- build:css(.tmp) styles/sharedeal.css -->
+    <link rel="stylesheet" href="styles/sharedeal.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/sharedeal-vendor.js -->
+    <script src="scripts/jquery-2.1.1.min.js"></script>
+    <script src="scripts/jquery.cookie.js"></script>
+    <script src="scripts/fastclick.js"></script>
+    <script src="scripts/jweixin-1.0.0.js"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <div id="mask">
+        <div class="loading"></div>
+    </div>
+    <img id="logo" src="images/cashcoupon/shareicon.jpg" style="position:absolute;top:0;z-index:-10000; left:-100%;">
+    <div class="wrap">
+        <div id="bg">
+            <div class="link-wrap">
+                <a id="flink" class="hide"></a>
+                <a id="slink" class="hide"></a>
+            </div>
+            <img id="bgimage" data-src="images/cashcoupon/bg_n.jpg" />
+            <div id="middle" class="middle hide">
+                <div class="arrow-wrap">
+                    <div class="arrow-up">
+                    </div>
+                </div>
+                <div class="words-wrap">
+                    <div>
+                        <span>小美快购为我代买</span>
+                        <span id="number"></span>
+                        <span>件商品</span><span id="getintime">，准时到达！</span>
+                    </div>
+                    <div>
+                        <span id="peisong">配送</span>
+                        <span id="delivertime"></span>
+                        <span id="timedesc"><span id="fenzhong">分钟，</span>服务棒棒哒！</span>
+                    </div>
+                </div>
+                <div id="pros" class="pro-wrap">
+                    <div id="scrolllayout">
+                    </div>
+                </div>
+                <div class="hide" id="toast"><span>该用户已隐藏了TA购买的商品</span></div>
+            </div>
+        </div>
+        <div class="down hide" id="down">
+            <div class="coupon-wrap">
+                <div id="get">
+                    <img class="coupon-unopen" data-src="images/cashcoupon/cashbox_unopen_n.png">
+                    <div class="phone-wrap">
+                        <input class="phone" id="phone_input" placeholder="输入您的手机号码" type='tel'>
+                        <a class="btn" id="button_get">领取红包</a>
+                    </div>
+                </div>
+                <div id="result" class="hide">
+                    <div class="desc-panel hide" id="desc_panel">
+                        <div class="msg hide" id="success_msg">
+                            <span class="count-wrap">您获得了<span id="count">X</span>张代金券</span>
+                            <span id="amount">0元</span>
+                            <span class="desc-phone desc-success-phone">已存入您的小美账户<span class="curphone success modis"></span><span class="modis"> 修改&gt;</span></span>
+                        </div>
+                        <div class="msg hide" id="failure_msg">
+                            <span id="failure_title">领过了!</span>
+                            <span id="failure_desc">留点机会给别人吧~</span>
+                            <span class="desc-phone desc-failure-phone">当前账户:<span class="curphone failure modis"></span><span class="modis"> 修改&gt;</span></span>
+                        </div>
+                    </div>
+                    <div id="openxmlife" class="hide">
+                        <a id="openxm" class="hide">打开小美快购</a>
+                    </div>
+                    <img class="coupon-open" data-src="images/cashcoupon/cashbox_open_n.png" alt="">
+                </div>
+                <div id="modi" class="hide">
+                    <img class="modi-bg" data-src="images/cashcoupon/modibg.png" />
+                    <div class="modi-desc">
+                        <span class="curphone-wrap">当前账户：<span class="curphone"></span></span>
+                        <input class="phone" id="input_modi" placeholder="输入您的手机号码" type='tel'>
+                        <a class="btn" id="btn_modi">修改</a>
+                        <span class="tip-wrap">修改成功后将在下次抢红包时生效</span>
+                    </div>
+                </div>
+                <div class="winnersWrapper hide" id="winnerWrap">
+                    <div id="winners" style="padding-left:5px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="download" class="hide">
+            <img src="images/cashcoupon/logo.png" alt="">
+            <img id="download_btn" src="images/cashcoupon/download_btn.png" alt="">
+        </div>
+    </div>
+    <script>
+    document.body.style.minHeight = document.body.scrollHeight + 'px';
+    </script>
+    <script src="scripts/XMLifeLib.js?__inline=true"></script>
+    <script src="scripts/sharedeal.js?__inline=true"></script>
+</body>
+
+</html>

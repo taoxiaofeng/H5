@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <title>hollpin:美好生活的开始</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="screen-orientation" content="portrait">
+    <!-- uc强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="share-title" content="">
+    <meta name="share-desc" content="">
+    <!--引入样式文件-->
+
+    <!-- build:css(.tmp) styles/hollpin-app.css -->
+    <link rel="stylesheet" href="styles/hollpin-app.css"/>
+    <!-- endbuild -->
+
+</head>
+<body>
+<div class="hollpin-android">
+    <div class="round-background">
+        <img class="round-background-one" src="images/hollpin-app/round-background-b.png"/>
+    </div>
+    <div class="title-c">
+        <img class="title-three" src="images/hollpin-app/title-three.png"/>
+    </div>
+    <div class="hollpin-download">
+        <button class="hollpin-download-one" id="hollpinDown" onclick="downloadHollpin()"><span class="download-title">下载 好品APP</span>
+        </button>
+    </div>
+</div>
+<script type="text/javascript">
+    var u = navigator.userAgent;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    /*alert('是否是Android：'+isAndroid);
+     alert('是否是iOS：'+isiOS);*/
+    /*if (isiOS) {
+        /!*var _hollpinDown = document.getElementById('hollpinDown');
+        _hollpinDown.style = "background-color: #404040;font-size: 18px;color: aliceblue;";
+        _hollpinDown.innerHTML = "敬请期待";*!/
+        /!*window.location = 'http://itunes.apple.com/gb/app/yi-dong-cai-bian/id1025410959?mt=8';*!/
+    }*/
+    var downloadHollpin = function () {
+        console.log('下载');
+        // 获取终端相关信息
+        var Terminal = {
+            //辨别移动终端类型
+            platform: function () {
+                var u = navigator.userAgent,
+                        app = navigator.appVersion;
+                return {
+                    //android终端或UC浏览器
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1,
+                    //是否为iPhone 或者 QQHD浏览器
+                    iPhone: u.indexOf('iPhone') > -1,
+                    //是否为iPad
+                    iPad: u.indexOf('iPad') > -1
+                };
+            }(),
+            //辨别移动终端的语言:zh-ch、en-us、ko-kr、ja-jp ...
+            language: (navigator.browserLanguage || navigator.language).toLowerCase()
+        };
+        //根据不同的终端,跳转不同的地址
+        var theUrl = '默认下载地址';
+        if (Terminal.platform.android) {
+            //Android版本下载地址
+            theUrl = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.tuda.hollpin';
+        } else if (Terminal.platform.iPhone) {
+            //iPhoneb版本下载地址
+            theUrl = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.tuda.hollpin';
+        } else if (Terminal.platform.iPad) {
+            //可以通过Language区分多国语言版
+            switch (Terminal.language) {
+                case 'en-us':
+                    //iPad APP(英文版)对应下载地址:
+                    theUrl = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.tuda.hollpin';
+                    break;
+                case 'ko-kr' :
+                    //iPad APP(韩文版)对应下载地址:
+                    theUrl = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.tuda.hollpin';
+                    break;
+                case 'ja-jp':
+                    ////iPad APP(日文版)对应下载地址:
+                    theUrl = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.tuda.hollpin';
+                    break;
+                default:
+                    //你的iPad APP (中文-默认)对应下载地址:
+                    theUrl = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.tuda.hollpin';
+            }
+        }
+        location.href = theUrl;
+    };
+</script>
+</body>
+</html>

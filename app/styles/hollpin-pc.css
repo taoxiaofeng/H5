@@ -1,0 +1,155 @@
+.hollpin-pc{
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid blue;*/
+    background-color: #F1F1F1;
+    text-align: center;
+    z-index: 1;
+}
+.header{
+    float: left;
+}
+.header-a{
+}
+.header-b{
+}
+.header-one{
+    width: 100%;
+    height: 60px;
+    z-index: 1;
+}
+.header-two{
+    width: 161px;
+    height: 150px;
+    position: absolute;
+    top: 9px;
+    left: 20%;
+    z-index: 2;
+}
+.download-description{
+    /*width: 84%;
+    height: 100%;*/
+    background:#ffffff;
+    width:1280px;
+    height:100%;
+    /*border: 1px solid red;*/
+    z-index: 3;
+    margin:0 auto;
+}
+.round-icon{
+    text-align: left;
+    padding-top: 206px;
+    padding-left: 139px;
+;
+}
+.round-icon,
+.round-icon-one{
+    width: 431px;
+    height:431px;
+}
+/*.title-one-a-pc,
+.title-one-pc{
+    width:458px;
+    height:43px;
+}
+.title-one-a-pc{
+    position: relative;
+    top: -400px;
+    left: 695px;
+}
+.title-two-a-pc,
+.title-two-pc{
+    width:363px;
+    height:25px;
+}
+.title-two-a-pc{
+    position: relative;
+    top: -390px;
+    left: 729px;
+}*/
+.title-one-b-pc,
+.title-new{
+    width: 457.53px;
+    height: 42.22px;
+}
+.title-one-b-pc{
+    position: relative;
+    top: -400px;
+    left: 695px;
+}
+/*.qr-code,
+.qr-code-one{
+    width:161.459px;
+    height:160.459px;
+}
+.qr-code{
+    position: relative;
+    top: -350px;
+    left: 714px;
+}*/
+.scan-download,
+.scan-download-one {
+    width: 135px;
+    height: 18px;
+}
+.scan-download{
+    position: relative;
+    top: -340px;
+    left: 729px;
+}
+.ios-download-a{
+    text-align: left;
+    position: relative;
+    top: -525px;
+    left: 977px;
+}
+.ios-download{
+    background:#ff4a87;
+    border: none;
+    border-radius:39.28px;
+    width:218px;
+    height:55px;
+}
+.ios-download-title{
+    font-size:19px;
+    color:#ffffff;
+    line-height:18px;
+    position: relative;
+    top: -5.50px;
+}
+.ios-icon{
+    width:24px;
+    height:28px;
+}
+.android-download-a{
+    text-align: left;
+    position: relative;
+    top: -500px;
+    left: 977px;
+}
+.android-download{
+    background:#404040;
+    border: none;
+    border-radius:39.28px;
+    width:218px;
+    height:55px;
+}
+.android-icon{
+    width: 23px;
+    height: 31px;
+}
+.android-download-title{
+    font-size:19px;
+    color:#ffffff;
+    line-height:18px;
+    position: relative;
+    top: -5.50px;
+}
+#_qrcode{
+    render: "table";
+    width: 161.459px;
+    height: 160.459px;
+    position: relative;
+    top: -350px;
+    left: 714px;
+}

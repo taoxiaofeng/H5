@@ -1,0 +1,673 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <title>好品考试问答卷</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="screen-orientation" content="portrait">
+    <!-- uc强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="share-title" content="好品考试问答卷!!!">
+    <!--<meta name="share-desc" content="让每天上班变成幸福一件事。">-->
+    <meta name="description" content="让每天上班变成幸福一件事。">     <!-- 分享描述 -->
+    <meta name="shareLink" content="">   <!--  分享链接 -->
+    <meta name="shareImg" content="">    <!-- 分享图片 -->
+    <!-- build:css(.tmp) styles/hollpinPromote.css -->
+    <link rel="stylesheet" href="styles/swiper/swiper-3.3.1.min.css">
+    <link rel="stylesheet" href="styles/swiper/swiper.css">
+    <link rel="stylesheet" href="styles/animate/animate.min.css">
+    <link rel="stylesheet" href="styles/hollpinPromote/hollpinPromote.css">
+    <!-- endbuild -->
+</head>
+
+<body>
+<span id="musicControl">
+    <a id="mc_play" class="stop on" onclick="play_music();">
+        <audio id="musicfx" loop="loop" autoplay="autoplay">
+            <source src="audio/background-music.mp3" type="audio/mpeg">
+        </audio>
+    </a>
+</span>
+<img src="images/afternoonTeaShare/Share-icon.jpg" style="position: absolute;top:0;z-index: -100000;left: -100%"
+     id="shareIcon"/>
+<script>
+    window.onresize = function () {
+        _winWidth = document.body.clientWidth || document.documentElement.clientWidth, _style = document.getElementsByTagName("html")[0].style;
+        _winWidth = _winWidth >= 1300 && devicePixelRatio == 1 ? 750 : _winWidth;
+        _style.fontSize = _winWidth / 7.5 + "px"
+    };
+    var scale = 1 / devicePixelRatio;
+
+    document.querySelector('meta[name="viewport"]').setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+    window.onresize();
+</script>
+<!-- Swiper -->
+<!-- /container -->
+<div class="up-arrow" id="up-arrow">
+    <img class="up-arrow-1" src="./images/up-icon/icon-yd03.png"/>
+</div>
+<div class="swiper-container swiper-container-vertical" id="fullPage">
+    <div class="swiper-wrapper">
+        <!-- 第一个页面-->
+        <div class="swiper-slide a">
+            <div class="cover">
+                <!--<img class="cover-img-1 questions" id="drag-up" draggable="true" src="images/hollpinPromote/0/04.png"/>-->
+                <!--<img class="cover-img-03" id="paper-one" draggable="true" src="images/hollpinPromote/0/01.png"/>-->
+                <!--<div class="cover-img-03 questions" id="paper-one">-->
+                <img class="cover-img-03" id="paper-one" src="images/hollpinPromote/0/home-page.png"/>
+                <img class="questions-img-02 questions" src="images/hollpinPromote/2/21.png"/>
+                <!--<img class="questions-img-03" id="start-answer" src="images/hollpinPromote/0/start-answer.png"/>-->
+                <img class="questions-img-04" id="start-answer-two" src="images/hollpinPromote/1/start-answer-two.png"/>
+                <!--</div>-->
+                <div id="paper-bag" draggable="true">
+                    <img class="cover-img-04" src="images/hollpinPromote/0/Top.png"/>
+                    <img class="cover-img-02" src="images/hollpinPromote/0/03.png"/>
+                </div>
+            </div>
+            <!--<div id="sound2">-->
+            <audio id="myaudio" src="audio/sound2.mp3" controls="controls" hidden="true"></audio>
+            <span class="start-answer-btn" onclick="autoPlay()"></span>
+            <!--</div>-->
+        </div>
+        <!-- 第二个页面-->
+        <div class="swiper-slide a">
+            <div class="first-question">
+                <img class="first-question-img-01" id="first-question-img-01" src="images/hollpinPromote/2/ff1.png"/>
+                <img class="first-question-img-02" src="images/hollpinPromote/2/21.png"/>
+                <img class="first-question-img-03" src="images/hollpinPromote/2/21.png"/>
+                <!--<img class="first-question-img-04 advance-paper" src="images/hollpinPromote/2/advance-paper.png"/>-->
+                <img class="first-question-img-05 advance-paper" id="first-advance-paper-two"
+                     src="images/hollpinPromote/2/advance-paper-two.png"/>
+                <img class="first-question-img-06 look-answer" src="images/hollpinPromote/2/look-answer.png"
+                     onclick="lookAnswer()"/>
+                <img class="first-question-img-07 look-answer-two" src="images/hollpinPromote/2/look-answer-two.png"/>
+                <img class="first-question-img-08" src="images/hollpinPromote/2/thinking.gif"/>
+                <img class="first-question-img-09 first-prompt prompt-switch"
+                     src="images/hollpinPromote/2/img_0319.png"/>
+                <img class="first-question-img-10 first-prompt" src="images/hollpinPromote/2/arrow.png"/>
+                <img class="first-question-img-11 first-prompt" src="images/hollpinPromote/2/difficulty.png"/>
+
+                <img class="first-question-img-12 fang-fang" src="images/hollpinPromote/3/ff2.png"/>
+                <img class="first-question-img-13 fang-fang" src="images/hollpinPromote/3/fangfang.gif"/>
+                <img class="first-question-img-14" src="images/hollpinPromote/3/look-next-question.png"/>
+                <img class="first-question-img-15" id="looking-answer"
+                     src="images/hollpinPromote/3/look-next-question-two.png"/>
+                <!--<img class="first-question-img-16" id="switching-figure" src="images/hollpinPromote/0/1211.gif"/>-->
+                <audio id="myaudio" src="audio/sound2.mp3" controls="controls" hidden="true"></audio>
+                <audio id="myaudio-3" src="audio/sound3.mp3" controls="controls" hidden="true"></audio>
+                <span class="advance-paper-btn" onclick="advancePaper()"></span>
+            </div>
+        </div>
+        <!-- 第三个页面-->
+        <div class="swiper-slide a">
+            <div class="second-question">
+                <img class="second-question-img-01" src="images/hollpinPromote/4/j1.png"/>
+                <img class="second-question-img-02" src="images/hollpinPromote/2/21.png"/>
+                <img class="second-question-img-03" src="images/hollpinPromote/2/21.png"/>
+                <!--<img class="second-question-img-04 advance-paper" src="images/hollpinPromote/2/advance-paper.png"/>-->
+                <img class="second-question-img-05 advance-paper" src="images/hollpinPromote/2/advance-paper-two.png"/>
+                <img class="second-question-img-06 look-answer" src="images/hollpinPromote/2/look-answer.png"
+                     onclick="lookAnswer()"/>
+                <img class="second-question-img-07 look-answer-two" src="images/hollpinPromote/2/look-answer-two.png"/>
+                <img class="second-question-img-08 second-prompt second-prompt-switch"
+                     src="images/hollpinPromote/4/img_0320.png"/>
+                <img class="second-question-img-09 second-prompt second-prompt-switch"
+                     src="images/hollpinPromote/4/arrow.png"/>
+                <img class="second-question-img-10" src="images/hollpinPromote/4/question-mark.gif"/>
+
+                <img class="second-question-img-11 zhangjiajing" src="images/hollpinPromote/5/j2.png"/>
+                <img class="second-question-img-14 zhangjiajing" src="images/hollpinPromote/5/zjj.gif"/>
+                <img class="second-question-img-12" src="images/hollpinPromote/3/look-next-question.png"/>
+                <img class="second-question-img-13" id="second-looking-answer"
+                     src="images/hollpinPromote/3/look-next-question-two.png"/>
+                <!--<img class="second-question-img-16" src="./images/hollpinPromote/0/1211.gif"/>-->
+                <audio id="second-myaudio" src="audio/sound2.mp3" controls="controls" hidden="true"></audio>
+                <audio id="second-myaudio-3" src="audio/sound3.mp3" controls="controls" hidden="true"></audio>
+                <span class="advance-paper-btn" onclick="advancePaper()"></span>
+            </div>
+        </div>
+        <!-- 第四个页面 -->
+        <div class="swiper-slide a">
+            <div class="third-question">
+                <img class="third-question-img-01" src="images/hollpinPromote/6/cdh.png"/>
+                <img class="third-question-img-02" src="images/hollpinPromote/2/21.png"/>
+                <img class="third-question-img-03" src="images/hollpinPromote/2/21.png"/>
+                <!--<img class="third-question-img-04 advance-paper" src="images/hollpinPromote/2/advance-paper.png"/>-->
+                <img class="third-question-img-05 advance-paper" src="images/hollpinPromote/2/advance-paper-two.png"/>
+                <img class="third-question-img-06 look-answer" src="images/hollpinPromote/2/look-answer.png"
+                     onclick="lookAnswer()"/>
+                <img class="third-question-img-07 look-answer-two" src="images/hollpinPromote/2/look-answer-two.png"/>
+                <img class="third-question-img-08" src="images/hollpinPromote/6/thinking-00.gif"/>
+                <img class="third-question-img-09 third-prompt third-prompt-switch"
+                     src="images/hollpinPromote/6/img_0318.png"/>
+                <img class="third-question-img-10 third-prompt third-prompt-switch"
+                     src="images/hollpinPromote/4/arrow.png"/>
+
+                <img class="third-question-img-11 chendeheng" src="images/hollpinPromote/7/nan1.png"/>
+                <img class="third-question-img-14 chendeheng" src="images/hollpinPromote/7/cdh2.gif"/>
+                <img class="third-question-img-12" src="images/hollpinPromote/3/look-next-question.png"/>
+                <img class="third-question-img-13" id="third-looking-answer"
+                     src="images/hollpinPromote/3/look-next-question-two.png"/>
+                <audio id="third-myaudio" src="audio/sound2.mp3" controls="controls" hidden="true"></audio>
+                <audio id="third-myaudio-3" src="audio/sound3.mp3" controls="controls" hidden="true"></audio>
+                <span class="advance-paper-btn" onclick="advancePaper()"></span>
+            </div>
+        </div>
+        <!-- 第五个页面-->
+        <div class="swiper-slide a">
+            <div class="fourth-question">
+                <img class="fourth-question-img-01" src="images/hollpinPromote/8/nan2.png"/>
+                <img class="fourth-question-img-02" src="images/hollpinPromote/2/21.png"/>
+                <img class="fourth-question-img-03" src="images/hollpinPromote/2/21.png"/>
+                <!--<img class="fourth-question-img-04 advance-paper" src="images/hollpinPromote/2/advance-paper.png"/>-->
+                <img class="fourth-question-img-05 advance-paper" src="images/hollpinPromote/2/advance-paper-two.png"/>
+                <img class="fourth-question-img-06 look-answer" src="images/hollpinPromote/2/look-answer.png"
+                     onclick="lookAnswer()"/>
+                <img class="fourth-question-img-07 look-answer-two" src="images/hollpinPromote/2/look-answer-two.png"/>
+                <img class="fourth-question-img-08" src="images/hollpinPromote/8/soul.gif"/>
+                <img class="fourth-question-img-09 fourth-prompt fourth-prompt-switch"
+                     src="images/hollpinPromote/8/img_0321.png"/>
+                <img class="fourth-question-img-10 fourth-prompt fourth-prompt-switch"
+                     src="images/hollpinPromote/8/zenneng.png"/>
+                <img class="fourth-question-img-11 fourth-prompt fourth-prompt-switch"
+                     src="images/hollpinPromote/4/arrow.png"/>
+
+                <img class="fourth-question-img-12 jinlong" src="images/hollpinPromote/9/nan2-shelf.png"/>
+                <img class="fourth-question-img-15 jinlong" src="images/hollpinPromote/9/jinlong.gif"/>
+                <img class="fourth-question-img-13" src="images/hollpinPromote/3/look-next-question.png"/>
+                <!--<img class="fourth-question-img-14" id="fourth-looking-answer" src="images/hollpinPromote/3/look-next-question-two.png"/>-->
+                <audio id="fourth-myaudio" src="audio/sound2.mp3" controls="controls" hidden="true"></audio>
+                <audio id="fourth-myaudio-3" src="audio/sound3.mp3" controls="controls" hidden="true"></audio>
+                <span class="advance-paper-btn" onclick="advancePaper()"></span>
+            </div>
+        </div>
+        <!-- 第六个页面-->
+        <div class="swiper-slide a">
+            <div class="back">
+                <img class="back-img-01" src="images/hollpinPromote/10/group-photo.png"/>
+                <img class="back-img-02" src="images/hollpinPromote/2/21.png"/>
+                <img class="back-img-03" src="images/hollpinPromote/2/21.png"/>
+                <img class="back-img-04 return-check" src="images/hollpinPromote/10/return-check.png"/>
+                <img class="back-img-05 return-check" src="images/hollpinPromote/10/return-check-two.png"/>
+                <img class="back-img-06 immediately-paper" src="images/hollpinPromote/10/immediately-paper.png"
+                     onclick="advancePaper()"/>
+                <img class="back-img-07 immediately-paper" src="images/hollpinPromote/10/immediately-paper-two.png"/>
+            </div>
+        </div>
+    </div>
+    <!-- build:js scripts/hollpinPromote-vendor.js -->
+    <script type="text/javascript" src="scripts/jquery/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="scripts/swiper/swiper-3.3.1.jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/swiper/swiper.min.js"></script>
+    <script type="text/javascript" src="scripts/swiper/swiper.animate.min.js"></script>
+    <script type="text/javascript" src="scripts/swiper/swiper3.07.js"></script>
+    <script type="text/javascript" src="scripts/fullpage/fullpage.min.js"></script>
+    <script type="text/javascript" src="scripts/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="scripts/hollpinPromote/hollpinPromote.js"></script>
+    <!-- endbuild -->
+    <!-- Initialize Swiper -->
+    <script type="text/javascript" src="config/cfg.js"></script>
+</div>
+<!-- Initialize Swiper -->
+<script type="text/javascript">
+    var swiper = new Swiper('.swiper-container', {
+        loop: false, //环路滑动
+        /*pagination: '.swiper-pagination',*/ //分页显示符
+        direction: 'vertical', //Swiper运动主要有两种模式，horizontal(水平滑动)以及vertical(垂直运动的滑动）,
+        slidesPerView: 1,
+        paginationClickable: true,
+        spaceBetween: 30,
+        mousewheelControl: false, //鼠标滚轮控制
+        grabCursor: true,
+        paginationType: 'fraction',
+        // 如果需要前进后退按钮
+        nextButton: '.swiper-next',
+        prevButton: '.swiper-button-prev',
+        onlyExternal: false, //值为true时，slide无法拖动
+
+
+        /*初始化时隐藏元素并在需要的时刻开始动画*/
+        onInit: function (swiper) { //Swiper2.x的初始化是onFirstInit
+            /* alert(swiper.activeIndex);*/ //提示Swiper的当前索引
+            swiperAnimateCache(swiper); //隐藏动画元素
+            swiperAnimate(swiper); //初始化完成开始动画
+        },
+        onSlideChangeEnd: function (swiper) {
+            /* alert('事件触发了!!!');*/
+            swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+        }
+    });
+
+    $(function () {
+        $('#fullPage').fullpage({
+            // sectionsColor : ['#ffef03','00d19a'],
+            'onLeave': function (index) {
+            }
+        });
+
+        function wxShare() {
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                contentType: 'application/json',
+                url: window.cfg.BBiz + '/manager/get_jsapi_ticket',
+                processData: true,
+                data: JSON.stringify({
+                    'authUrl': window.location.href.split('#')[0]
+                }),
+                success: function (res) {
+//                    alert(res.appid);
+                    if (res) {
+                        if (res.signature != undefined && res.signature != "") {
+                            wx.config({
+                                debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                                appId: res.appid, // 必填，公众号的唯一标识
+                                timestamp: res.timestamp, // 必填，生成签名的时间戳
+                                nonceStr: res.noncestr, // 必填，生成签名的随机串
+                                signature: res.signature,// 必填，签名，见附录1
+                                jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                            });
+                            wx.ready(function () {
+                                var title = document.getElementsByTagName("title")[0].innerHTML || "好品";
+                                var desc = document.querySelector("meta[name=description]").content || "来自好品";
+                                var imgUrl = document.getElementById('shareIcon').src || document.getElementsByTagName("img")[0].src;
+                                var linkUrl = document.querySelector("meta[name=shareLink]").content || window.location.href;
+
+                                wx.onMenuShareTimeline({
+                                    title: title,
+                                    desc: desc,
+                                    link: linkUrl, // 分享链接
+                                    imgUrl: imgUrl, // 分享图标
+                                    success: function () {
+                                        // 用户确认分享后执行的回调函数
+                                    },
+                                    cancel: function () {
+                                        // 用户取消分享后执行的回调函数
+                                    }
+                                });
+                                wx.onMenuShareAppMessage({
+                                    title: title, // 分享标题
+                                    desc: desc, // 分享描述
+                                    link: linkUrl, // 分享链接
+                                    imgUrl: imgUrl, // 分享图标
+                                    type: '', // 分享类型,music、video或link，不填默认为link
+                                    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                                    success: function () {
+                                        // 用户确认分享后执行的回调函数
+                                    },
+                                    cancel: function () {
+                                        // 用户取消分享后执行的回调函数
+                                    }
+                                });
+                            })
+                        }
+                    }
+                }
+            })
+        }
+
+        wxShare();
+    });
+    //滑动试卷
+    //拖动时触发drop 事件
+    function dragImg() {
+        // 获取节点
+        var block = document.getElementById("paper-one");
+        var oW, oH;
+        // 绑定touchstart事件
+        block.addEventListener("touchstart", function (e) {
+            console.log(e);
+            var touches = e.touches[0];
+            oW = touches.clientX - block.offsetLeft;
+            oH = touches.clientY - block.offsetTop;
+            //阻止页面的滑动默认事件
+            document.addEventListener("touchmove", defaultEvent, false);
+        }, false);
+
+        block.addEventListener("touchmove", function (e) {
+            var touches = e.touches[0];
+            var oLeft = touches.clientX - oW;
+            var oTop = touches.clientY - oH;
+            /*if(oLeft < 0) {
+             oLeft = 0;
+             }else if(oLeft > document.documentElement.clientWidth - block.offsetWidth) {
+             oLeft = (document.documentElement.clientWidth - block.offsetWidth);
+             }
+             block.style.left = oLeft + "px";*/
+            block.style.top = oTop + "px";
+        }, false);
+        block.addEventListener("touchend", function (e) {
+            $("#paper-one").addClass('fly');
+            setTimeout(function () {
+                $("#paper-one").addClass('scale');
+            }, 2100);
+            $(".cover-img-02,.cover-img-04").addClass('fly2');
+            $("#drag-up").css('display', 'none');
+            setTimeout(function () {
+                $(".questions").addClass('fly5');
+            }, 3000);
+            setTimeout(function () {
+                $(".start-answer-btn").css('display', 'block');
+            }, 3000);
+            /* $("#paper-one").animate({
+             top:'-5.00rem',
+             opacity:'0',
+             speed:'15000',
+             height:'0'
+             });
+             $("#paper-bag").animate({
+             bottom:'-5.00rem',
+             opacity:'0',
+             speed:'15000',
+             height:'0',
+             width:'100%'
+             });*/
+        });
+
+        block.addEventListener("touchend", function () {
+            document.removeEventListener("touchmove", defaultEvent, false);
+        }, false);
+        function defaultEvent(e) {
+            e.preventDefault();
+        }
+
+//        $(".first-question").append('<img class="first-question-img-16" id="switching-figure" src="images/hollpinPromote/0/1211.gif"/>');
+        $(".first-question").append(function(){
+            return '<img class="first-question-img-16" id="switching-figure" src="images/hollpinPromote/0/1211.gif"/>';
+        });
+    }
+    dragImg();
+
+    //    更换图片
+//    function changeImg(url) {
+//        var bigimg = document.getElementById("first-question-img-01");
+//        bigimg.src = url;
+//    }
+    //    function changeBack()
+    //    {
+    //        var bigimg = document.getElementById("first-question-img-01");
+    ////        bigimg.src="images/hollpinPromote/2/ff1.png";
+    //        bigimg.src="images/hollpinPromote/0/switching-figure.gif";
+    //    }
+
+    //开始答题
+    /*function startAnswer() {
+     $("#start-answer").click(function () {
+     $("#start-answer-two").show();
+     swiper.slideNext();//下一页
+     });
+     }*/
+    //    startAnswer();
+
+    //偷看答案
+    function lookAnswer() {
+        var myAuto = document.getElementById('myaudio');
+        myAuto.play();
+        $(".look-answer").on('touchstart', function () {
+            $(this).css('display', 'none');
+            $(".look-answer-two").css('display', 'block');
+            $(".first-prompt").css('display', 'block');
+            $(".second-prompt").css('display', 'block');
+            $(".third-prompt").css('display', 'block');
+            $(".fourth-prompt").css('display', 'block');
+        });
+        $(".look-answer").on('touchend', function () {
+            $(this).css('display', 'block');
+            $(".look-answer-two").css('display', 'none');
+        });
+    }
+    //    lookAnswer();
+
+    //切换页面
+    function switchNextPage() {
+        //第一题页面切换
+        $(".prompt-switch").on('touchstart', function () {
+            var myAuto = document.getElementById('myaudio-3');
+            myAuto.play();
+//            $(".first-question-img-01").addClass('first-question1');
+            /*setTimeout(function() {
+             $(".first-question-img-16").addClass('first-question-img-16-show');
+             console.log($(".first-question-img-16").addClass('first-question-img-16-show'));
+             },1000);*/
+//            setTimeout(function() {
+            $("#switching-figure").css('display', 'block');
+//            },1000);
+            $(".first-question-img-08").css('display', 'none');
+            $(".first-question-img-09").css('display', 'none');
+            $(".first-question-img-10").css('display', 'none');
+            $(".first-question-img-11").css('display', 'none');
+            $(".look-answer").css('display', 'none');
+            $(".look-answer-two").css('display', 'none');
+            $(".fang-fang").addClass('rendering-page');
+            $(".first-question-img-14").css('display', 'block');
+//            $(".page4-img-07").css('display', 'block');
+//            debugger
+            setTimeout(function() {
+                $(".first-question-img-16").remove();
+                $(".second-question").append(function(){
+                    return '<img class="second-question-img-16" id="switching-figure2" src="images/hollpinPromote/0/1212.gif"/>';
+                });
+            },3000);
+
+        });
+//        $("#switching-figure").remove();
+        //第二题页面切换
+        $(".second-prompt-switch").on('touchstart', function () {
+            var myAuto = document.getElementById('second-myaudio-3');
+            myAuto.play();
+//            $(".second-question-img-01").addClass('1');
+            /*setTimeout(function () {
+                $(".second-question-img-16").addClass('second-question-img-16-show');
+                console.log($(".second-question-img-16").addClass('second-question-img-16-show'));
+            }, 1000);*/
+//            $(".first-question").append('<img class="first-question-img-16" id="switching-figure" src="images/hollpinPromote/0/1211.gif"/>');
+            $("#switching-figure2").css('display', 'block');
+            $(".second-question-img-08").css('display', 'none');
+            $(".second-question-img-09").css('display', 'none');
+            $(".second-question-img-10").css('display', 'none');
+            $(".look-answer").css('display', 'none');
+            $(".look-answer-two").css('display', 'none');
+            $(".second-question-img-12").css('display', 'block');
+            $(".zhangjiajing").addClass('rendering-page');
+            setTimeout(function() {
+                $(".second-question-img-16").remove();
+                $(".third-questio").append(function(){
+                    return '<img class="third-question-img-16" id="switching-figure3" src="images/hollpinPromote/0/1213.gif"/>';
+                });
+            },3000);
+        });
+        //第三题页面切换
+        $(".third-prompt-switch").on('touchstart', function () {
+            var myAuto = document.getElementById('second-myaudio-3');
+            myAuto.play();
+            $("#switching-figure3").css('display', 'block');
+//            $(".third-question-img-01").addClass('first-question1');
+            $(".third-question-img-08").css('display', 'none');
+            $(".third-question-img-09").css('display', 'none');
+            $(".third-question-img-10").css('display', 'none');
+            $(".look-answer").css('display', 'none');
+            $(".look-answer-two").css('display', 'none');
+            $(".third-question-img-12").css('display', 'block');
+            $(".chendeheng").addClass('rendering-page');
+
+            setTimeout(function() {
+                debugger
+                $(".third-question-img-16").remove();
+                $(".fourth-question").append(function(){
+                    return '<img class="fourth-question-img-16" id="switching-figure4" src="images/hollpinPromote/0/1214.gif"/>';
+                });
+            },3000);
+        });
+        //第四题页面切换
+        $(".fourth-prompt-switch").on('touchstart', function () {
+            var myAuto = document.getElementById('fourth-myaudio-3');
+            myAuto.play();
+
+            $("#switching-figure4").css('display', 'block');
+//            $(".fourth-question-img-01").addClass('first-question1');
+            $(".fourth-question-img-08").css('display', 'none');
+            $(".fourth-question-img-09").css('display', 'none');
+            $(".fourth-question-img-10").css('display', 'none');
+            $(".fourth-question-img-11").css('display', 'none');
+            $(".look-answer").css('display', 'none');
+            $(".look-answer-two").css('display', 'none');
+            $(".fourth-question-img-13").css('display', 'block');
+            $(".jinlong").addClass('rendering-page');
+            setTimeout(function() {
+                $(".fourth-questions-img-16").remove();
+                /*$(".fourth-question").append(function(){
+                    return '<img class="fourth-question-img-16" id="switching-figure" src="images/hollpinPromote/0/1214.gif"/>';
+                });*/
+            },3000);
+        });
+    }
+    switchNextPage();
+
+    //提前交卷
+    function advancePaper() {
+        //播放音效
+        var myAuto = document.getElementById('myaudio');
+        myAuto.play();
+        //跳转页面
+        /*$(".advance-paper,.immediately-paper").click(function () {
+         window.location.href = "http://jsform.com/web/formview/57d642ef0cf28820a011c09e";
+         });*/
+        $(".advance-paper-btn").hide();
+        $("#first-advance-paper-two").show();
+        window.location.href = "http://jsform.com/web/formview/57d642ef0cf28820a011c09e";
+    }
+    //    advancePaper();
+
+    //查看下一题
+    function lookNextQuestion() {
+        $(".first-question-img-14").click(function () {
+            var myAuto = document.getElementById('myaudio');
+            myAuto.play();
+            $("#looking-answer").show();
+            swiper.slideNext();//下一页
+            $(".look-answer").css('display', 'block');
+            $(".look-answer-two").css('display', 'none');
+            $(".second-prompt").css('display', 'none');
+        });
+        $(".second-question-img-12").click(function () {
+            var myAuto = document.getElementById('second-myaudio');
+            myAuto.play();
+            $("#second-looking-answer").show();
+            swiper.slideNext();//下一页
+            $(".look-answer").css('display', 'block');
+            $(".look-answer-two").css('display', 'none');
+            $(".third-prompt").css('display', 'none');
+        });
+        $(".third-question-img-12").click(function () {
+            var myAuto = document.getElementById('third-myaudio');
+            myAuto.play();
+            $("#third-looking-answer").show();
+            swiper.slideNext();//下一页
+            $(".look-answer").css('display', 'block');
+            $(".look-answer-two").css('display', 'none');
+            $(".fourth-prompt").css('display', 'none');
+        });
+        $(".fourth-question-img-13").click(function () {
+            $("#fourth-looking-answer").show();
+            swiper.slideNext();//下一页
+            $(".look-answer").css('display', 'block');
+            $(".look-answer-two").css('display', 'none');
+            $(".fourth-prompt").css('display', 'none');
+        });
+    }
+    lookNextQuestion();
+
+    //返回第一页
+    $(".return-check").click(function () {
+        swiper.slideTo(0, 1000, false);
+        window.location.reload();
+    });
+
+    //控制过场动画播放
+    function fourthLookingAnswer() {
+        $("#fourth-looking-answer").load(function () {
+            $(this).hide();
+        });
+    }
+
+
+    /*音乐控制*/
+    function play_music() {
+        if ($('#mc_play').hasClass('on')) {
+            $('#mc_play audio').get(0).pause();
+            $('#mc_play').attr('class', 'stop');
+        } else {
+            $('#mc_play audio').get(0).play();
+            $('#mc_play').attr('class', 'on');
+        }
+        $('#music_play_filter').hide();
+        event.stopPropagation(); //阻止冒泡
+    }
+    function just_play(id) {
+        $('#mc_play audio').get(0).play();
+        $('#mc_play').attr('class', 'on');
+        if (typeof(id) != 'undefined') {
+            $('#music_play_filter').hide();
+        }
+        event.stopPropagation(); //阻止冒泡
+    }
+    function is_weixn() {
+        return false;
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /*var play_filter = document.getElementById('music_play_filter');
+     play_filter.addEventListener('click', function () {
+     just_play(1);
+     });
+     play_filter.addEventListener('touchstart', function () {
+     just_play(1);
+     });
+     play_filter.addEventListener('touchend', function () {
+     just_play(1);
+     });
+     play_filter.addEventListener('touchmove', function () {
+     just_play(1);
+     });
+     play_filter.addEventListener('mousedown', function () {
+     just_play(1);
+     });
+     play_filter.addEventListener('mouseup', function () {
+     just_play(1);
+     });
+     play_filter.addEventListener('mousemove', function () {
+     just_play(1);
+     });*/
+    play_music();
+    window.onload = function () {
+        if (!is_weixn()) {
+            just_play();
+        }
+    };
+    //点击开始答题音效
+    function autoPlay() {
+        var myAuto = document.getElementById('myaudio');
+        myAuto.play();
+
+        //跳转下一页
+        $(".start-answer-btn").hide();
+        $("#start-answer-two").show();
+        swiper.slideNext();//下一页
+    }
+
+
+</script>
+</body>
+
+</html>
